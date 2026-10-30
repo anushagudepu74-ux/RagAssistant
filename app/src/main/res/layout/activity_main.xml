@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F6FB"
+    android:fillViewport="true"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="22dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="22dp"
+        android:paddingBottom="28dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RAG Document Assistant"
+            android:textColor="#19483F"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="26dp"
+            android:lineSpacingExtra="3dp"
+            android:text="Upload a document and search relevant information using vector search."
+            android:textColor="#687589"
+            android:textSize="16sp" />
+
+        <!-- Document Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:padding="22dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Document"
+                android:textColor="#202A3A"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSelectedFile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="28dp"
+                android:text="No document selected"
+                android:textColor="#687589"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnSelectPdf"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#6950A1"
+                android:text="Select PDF"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnUploadPdf"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="14dp"
+                android:backgroundTint="#6950A1"
+                android:text="Upload &amp; Index"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvUploadStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text=""
+                android:textColor="#16804A"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- Semantic Search Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="3dp"
+            android:padding="22dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Semantic Search"
+                android:textColor="#202A3A"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="#6950A1"
+                android:hint="Ask something about the document"
+                android:inputType="textCapSentences|textMultiLine"
+                android:minHeight="52dp"
+                android:padding="6dp"
+                android:textColor="#202A3A"
+                android:textColorHint="#9CA3AF"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="#6950A1"
+                android:text="Search Relevant Content"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="14dp"
+                android:indeterminate="true"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <!-- Retrieved Content Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="22dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Retrieved Content"
+                android:textColor="#202A3A"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvRetrievedContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:lineSpacingExtra="5dp"
+                android:text="Search results will appear here."
+                android:textColor="#4B5565"
+                android:textSize="16sp"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/tvSource"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:textColor="#6950A1"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
